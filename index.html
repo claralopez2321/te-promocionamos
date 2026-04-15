@@ -99,7 +99,7 @@
       ¿QUÉ HACEMOS?
     </span>
 
-    <h2>En este lugar</h2>
+    <h2 data-aos="flip-left" data-aos-delay="100">En este lugar</h2>
 
     <p class="intro">
       Diseñamos estrategias de comunicación integrales que trascienden los límites tradicionales. Escuchamos, entendemos y transformamos las necesidades de nuestros clientes en planes únicos que combinan creatividad, datos y diseño. Potenciamos marcas con soluciones que generan sentido y conexiones auténticas.
@@ -160,7 +160,7 @@
     </span>
 
     <!-- TITULO -->
-    <h2>Cada trabajo es único</h2>
+    <h2  data-aos="flip-left" data-aos-delay="100"> Cada trabajo es único</h2>
 
     <!-- GRID -->
  <div class="grid-works">
@@ -219,7 +219,7 @@
         Te entendemos
       </span>
 
-      <h2>Nuestro propósito</h2>
+      <h2 data-aos="fade-up">Nuestro propósito</h2>
 
       <p>
         Dar vida y sentido a las ideas que las organizaciones quieren expresar. 
@@ -233,6 +233,139 @@
     <!-- IMAGEN -->
     <div class="about-image">
       <img src="/assets/marca-1.png" alt="">
+    </div>
+
+  </div>
+
+</section>
+<section class="team-carousel">
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="team-header">
+      <span class="badge dark">
+        <span class="dot"></span>
+        Los mejores
+      </span>
+
+      <h2>Más que un equipo</h2>
+    </div>
+
+    <!-- CARRUSEL -->
+    <div class="carousel-wrapper">
+
+<button class="carousel-btn prev">&#10094;</button>
+      <div class="carousel-track">
+
+        <div class="team-card">
+          <img src="/assets/equipo-vale.png" alt="">
+        </div>
+
+        <div class="team-card">
+          <img src="/assets/quipo-fran.png" alt="">
+        </div>
+
+        <div class="team-card">
+          <img src="/assets/equipo-ain.png" alt="">
+        </div>
+
+        <div class="team-card">
+          <img src="/assets/equipo-cami.png" alt="">
+        </div>
+            <div class="team-card">
+          <img src="/assets/equipo-esteban.png" alt="">
+        </div>
+
+        <div class="team-card">
+          <img src="/assets/equipo-flor.png" alt="">
+        </div>
+
+        <div class="team-card">
+          <img src="/assets/equipo-iaru.png" alt="">
+        </div>
+
+        <div class="team-card">
+          <img src="/assets/equipo-jose.png" alt="">
+        </div>
+
+           <div class="team-card">
+          <img src="/assets/equipo-lu.png" alt="">
+        </div>
+
+        <div class="team-card">
+          <img src="/assets/equipo-mechi.png" alt="">
+        </div>
+
+        <div class="team-card">
+          <img src="/assets/equipo-pame.png" alt="">
+        </div>
+
+        
+        <div class="team-card">
+          <img src="/assets/equipo-vero.png" alt="">
+        </div>
+
+      </div>
+
+<button class="carousel-btn next">&#10095;</button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!--- seccion numeros-->
+
+<section class="stats-section">
+
+  <div class="container stats-grid">
+
+   <div class="stat">
+  <h2>+<span class="counter" data-target="10">0</span></h2>
+  <span class="line"></span>
+  <p>Años de experiencia</p>
+</div>
+
+<div class="stat">
+  <h2>+<span class="counter" data-target="6532">0</span></h2>
+  <span class="line"></span>
+  <p>Cafés servidos</p>
+</div>
+
+<div class="stat">
+  <h2><span class="counter" data-target="98">0</span>%</h2>
+  <span class="line"></span>
+  <p>Clientes felices</p>
+</div>
+  </div>
+
+</section>
+
+<!--seccion clientes-->
+
+<section class="clients-section">
+
+  <div class="container">
+
+    <!-- BADGE -->
+    <span class="badge">
+      <span class="dot"></span>
+      Clientes copados
+    </span>
+
+    <!-- TITULO -->
+    <h2 data-aos="fade-up">CONFÍAN EN NOSOTROS</h2>
+
+    <!-- IMAGEN DESKTOP -->
+    <div class="clients-image desktop">
+      <img src="/assets/clientes-desk.png" alt="Clientes">
+    </div>
+
+    <!-- IMAGEN MOBILE -->
+    <div class="clients-image mobile">
+      <img src="/assets/clientes-desk.png" alt="Clientes">
     </div>
 
   </div>
@@ -284,6 +417,63 @@
     easing: 'ease-out-cubic'
   });
   
+
 </script>
+
+<script>
+const track = document.querySelector('.carousel-track');
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
+
+const scrollAmount = 300;
+
+next.addEventListener('click', () => {
+  track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+});
+
+prev.addEventListener('click', () => {
+  track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+});
+</script>
+
+<script>
+const counters = document.querySelectorAll('.counter');
+
+const speed = 200; // menor = más rápido
+
+const animateCounters = () => {
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+
+    const updateCount = () => {
+      const increment = target / speed;
+
+      if (count < target) {
+        count += increment;
+        counter.innerText = Math.floor(count).toLocaleString();
+        requestAnimationFrame(updateCount);
+      } else {
+        counter.innerText = target.toLocaleString();
+      }
+    };
+
+    updateCount();
+  });
+};
+
+/* 🔥 SOLO cuando entra en pantalla */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounters();
+      observer.disconnect(); // se ejecuta una sola vez
+    }
+  });
+});
+
+observer.observe(document.querySelector('.stats-section'));
+</script>
+
 </body>
 </html>
