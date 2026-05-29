@@ -1711,3 +1711,277 @@ body {
   }
 
 }
+
+/* SECCION blog */
+
+.blog-section{
+  padding:120px 0;
+  background:#fff;
+  font-family:'Poppins',sans-serif;
+}
+
+.blog-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  border:1px solid #d9d9d9;
+  border-radius:999px;
+  padding:8px 18px;
+  font-size:14px;
+  margin-bottom:30px;
+}
+
+.blog-badge .dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#ff005c;
+}
+
+.blog-top{
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+  align-items:flex-end;
+  margin-bottom:70px;
+}
+
+.blog-top h2{
+  font-size:72px;
+  line-height:1;
+  color:#111;
+  max-width:700px;
+}
+
+.blog-top p{
+  max-width:420px;
+  font-size:18px;
+  line-height:1.7;
+  color:#555;
+}
+
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+
+.blog-card{
+  background:#fff;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  transition:.35s;
+}
+
+.blog-card:hover{
+  transform:translateY(-8px);
+}
+
+.blog-image{
+  overflow:hidden;
+}
+
+.blog-image img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  display:block;
+  transition:.5s;
+}
+
+.blog-card:hover img{
+  transform:scale(1.05);
+}
+
+.blog-content{
+  padding:30px;
+}
+
+.blog-category{
+  display:inline-block;
+  margin-bottom:16px;
+  font-size:14px;
+  font-weight:600;
+  color:#ff005c;
+}
+
+.blog-content h3{
+  font-size:28px;
+  line-height:1.2;
+  margin-bottom:18px;
+  color:#111;
+}
+
+.blog-content p{
+  color:#666;
+  line-height:1.7;
+  margin-bottom:25px;
+}
+
+.blog-link{
+  color:#111;
+  font-weight:600;
+  text-decoration:none;
+}
+
+/* responsive */
+
+@media(max-width:992px){
+
+  .blog-top{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .blog-top h2{
+    font-size:54px;
+  }
+
+  .blog-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .blog-section{
+    padding:80px 0;
+  }
+
+  .blog-top h2{
+    font-size:40px;
+  }
+
+}
+
+/* SECCION contacto */
+
+.contact-page{
+  font-family:'Poppins',sans-serif;
+  background:#f5f1ea;
+  min-height:100vh;
+}
+
+/* HERO */
+
+.contact-hero{
+  padding:180px 0 140px;
+}
+
+.contact-hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:70px;
+  align-items:center;
+}
+
+.contact-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 18px;
+  border-radius:999px;
+  border:1px solid #d5c8bb;
+  margin-bottom:35px;
+  font-size:14px;
+  color:#111;
+}
+
+.contact-pill .dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#ff005c;
+}
+
+.contact-left h1{
+  font-size:60px;
+  line-height:.95;
+  color:#111;
+  margin-bottom:30px;
+  font-weight:800;
+}
+
+.contact-left p{
+  font-size:22px;
+  line-height:1.7;
+  max-width:650px;
+  color:#555;
+}
+
+/* CARD */
+
+.contact-card{
+  background:#FF1658;
+  color:#fff;
+  padding:60px;
+  border-radius:40px;
+  display:flex;
+  flex-direction:column;
+  gap:45px;
+  transform:rotate(-2deg);
+  box-shadow:0 30px 60px rgba(0,0,0,.18);
+}
+
+.contact-item span{
+  display:block;
+  opacity:.6;
+  margin-bottom:12px;
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.contact-item a{
+  color:#fff;
+  text-decoration:none;
+  font-size:30px;
+  line-height:1.3;
+  font-weight:600;
+  transition:.3s;
+}
+
+.contact-item a:hover{
+  opacity:.7;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+
+  .contact-hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact-left h1{
+    font-size:72px;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .contact-hero{
+    padding:140px 0 90px;
+  }
+
+  .contact-left h1{
+    font-size:52px;
+  }
+
+  .contact-left p{
+    font-size:18px;
+  }
+
+  .contact-card{
+    padding:35px;
+    border-radius:28px;
+  }
+
+  .contact-item a{
+    font-size:22px;
+  }
+
+}
