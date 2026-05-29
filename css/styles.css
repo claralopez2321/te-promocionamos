@@ -257,39 +257,48 @@ body {
 }
 
 /* SECCION VIDEO */
-.video-section {
-  position: relative;
-  width: 100%;
-  height: clamp(500px, 70vw, 980px);
-  overflow: hidden;
+
+.video-section{
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+  background:#000;
 }
 
-.video-section iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 56.25vw;
-  min-width: 177.78vh;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
+.video-section iframe{
+  position:absolute;
+  top:50%;
+  left:50%;
+
+  width:177.77777778vh;
+  height:56.25vw;
+
+  min-width:100%;
+  min-height:100%;
+
+  transform:translate(-50%, -50%);
+  border:0;
+  pointer-events:none;
 }
 
-@media (max-width: 768px) {
-  .video-section {
-    height: auto;
-    aspect-ratio: 16 / 9;
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .video-section{
+    height:auto;
+    aspect-ratio:16/9;
   }
 
-  .video-section iframe {
-    width: 100%;
-    height: 100%;
-    min-width: 100%;
-    min-height: 100%;
+  .video-section iframe{
+    width:100%;
+    height:100%;
+    min-width:100%;
+    min-height:100%;
   }
-}
 
+}
 /* =========================
    SOMOS PAGE
 ========================= */
@@ -1438,4 +1447,267 @@ body {
   .propuesta-badge {
     justify-content: center;
   }
+}
+
+
+/* SECCION trabajo video */
+
+.videos-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-top:60px;
+}
+
+.videos-grid video{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  border-radius:28px;
+  display:block;
+}
+
+/* mobile */
+@media(max-width:768px){
+
+  .videos-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+}
+
+/* SECCION trabajo filtros */
+
+.portfolio-section{
+  padding:120px 0;
+  background:#fff;
+}
+
+.portfolio-section h2{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.portfolio-filters{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-bottom:60px;
+}
+
+.filter-btn{
+  padding:12px 22px;
+  border:none;
+  border-radius:999px;
+  background:#f1f1f1;
+  cursor:pointer;
+  transition:.3s;
+  font-weight:600;
+}
+
+.filter-btn.active{
+  background:#111;
+  color:#fff;
+}
+
+.masonry-gallery{
+  column-count:3;
+  column-gap:20px;
+}
+
+.masonry-item{
+  break-inside:avoid;
+  margin-bottom:20px;
+  cursor:pointer;
+}
+
+.masonry-item img{
+  width:100%;
+  border-radius:24px;
+  display:block;
+  transition:.3s;
+}
+
+.masonry-item:hover img{
+  transform:scale(1.02);
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  visibility:hidden;
+  transition:.3s;
+  z-index:9999;
+  padding:40px;
+}
+
+.lightbox.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.lightbox-img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:20px;
+}
+
+.lightbox-close{
+  position:absolute;
+  top:30px;
+  right:40px;
+  color:#fff;
+  font-size:50px;
+  cursor:pointer;
+}
+
+/* responsive */
+
+@media(max-width:992px){
+
+  .masonry-gallery{
+    column-count:2;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .masonry-gallery{
+    column-count:1;
+  }
+
+}
+
+.services-tepromo{
+  background:#fff;
+  padding:120px 0;
+}
+
+.card h3,
+.card p,
+.card .icon{
+  color:#fff;
+}
+
+.filosofia-section{
+  background:#3a3a3a;
+  padding:120px 0;
+  font-family:'Poppins',sans-serif;
+}
+
+.filosofia-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  border:1px solid #d9b29d;
+  border-radius:999px;
+  padding:8px 18px;
+  color:#fff;
+  font-size:14px;
+  margin-bottom:30px;
+}
+
+.filosofia-badge .dot{
+  width:10px;
+  height:10px;
+  background:#ff3b57;
+  border-radius:50%;
+}
+
+.filosofia-section h2{
+  color:#fff;
+  font-size:50px;
+  line-height:1;
+  font-weight:400;
+  margin-bottom:70px;
+  max-width:1000px;
+}
+
+.filosofia-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.filosofia-card{
+  border-radius:28px;
+  padding:40px;
+  color:#fff;
+}
+
+.filosofia-card.pink{
+  background:#ff005c;
+}
+
+.filosofia-card.cyan{
+  background:#17b7e5;
+}
+
+.filosofia-card.purple{
+  background:#4a00b8;
+}
+
+.filosofia-icon{
+  width:56px;
+  height:56px;
+  background:#ffffff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:30px;
+}
+
+.filosofia-icon i{
+  color:#4e4b4c;
+  font-size:22px;
+}
+
+.filosofia-card h3{
+  font-size:22px;
+  line-height:1.2;
+  margin-bottom:18px;
+  font-weight:700;
+}
+
+.filosofia-card p{
+  font-size:18px;
+  line-height:1.6;
+  opacity:.95;
+}
+
+/* responsive */
+
+@media(max-width:992px){
+
+  .filosofia-section h2{
+    font-size:58px;
+  }
+
+  .filosofia-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .filosofia-section{
+    padding:80px 0;
+  }
+
+  .filosofia-section h2{
+    font-size:42px;
+  }
+
 }

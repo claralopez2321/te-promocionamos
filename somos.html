@@ -23,11 +23,11 @@
       <nav class="nav" id="nav">
         <ul>
           <li><a href="index.html">Inicio</a></li>
-          <li><a href="somos.html" class="is-active">Somos</a></li>
-          <li><a href="#">Nuestro trabajo</a></li>
-          <li><a href="#">Qué hacemos</a></li>
-          <li><a href="#">Horizonte creativo</a></li>
-          <li><a href="#">Hablemos</a></li>
+          <li><a href="somos.html">Somos</a></li>
+          <li><a href="/trabajo.html">Nuestro trabajo</a></li>
+          <li><a href="/hacemos.html">Qué hacemos</a></li>
+          <li><a href="/creativo.html">Horizonte creativo</a></li>
+          <li><a href="/contacto.html">Hablemos</a></li>
         </ul>
       </nav>
 
@@ -236,5 +236,22 @@
       easing: 'ease-out-cubic'
     });
   </script>
+
+<script>
+const track = document.querySelector('.carousel-track');
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
+
+const scrollAmount = 300;
+
+next.addEventListener('click', () => {
+  track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+});
+
+prev.addEventListener('click', () => {
+  track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+});
+</script>
+  
 </body>
 </html>
